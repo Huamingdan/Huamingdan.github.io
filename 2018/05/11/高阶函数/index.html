@@ -10,6 +10,16 @@
 
     <!--Description-->
     
+        <meta name="description" content="1.1函数的定义1、命名函数：会提升到当前作用域的最前面(在变量声明之前)
+​    function test(){}   
+2、匿名函数,不会提升
+​    var a = function(){}
+3、自调用函数
+;(function(){
+   console.log(“x”)
+}())
+4">
+    
 
     <!--Author-->
     
@@ -18,7 +28,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="king of the web">
+        <meta property="og:title" content="高阶函数">
     
 
     <!--Open Graph Description-->
@@ -29,7 +39,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -40,7 +50,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2019 - king of the web</title>
+    <title>高阶函数 - king of the web</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -127,9 +137,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -137,52 +145,167 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">2019</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2018/01/09/html简介/">
-        <span class="archive-date">
-            Jan 2018
-        </span>
-        html简介
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/05/11/高阶函数/">
+                高阶函数
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-05-11</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="1-1函数的定义"><a href="#1-1函数的定义" class="headerlink" title="1.1函数的定义"></a>1.1函数的定义</h2><p>1、命名函数：会提升到当前作用域的最前面(在变量声明之前)</p>
+<p>​    function test(){}   </p>
+<p>2、匿名函数,不会提升</p>
+<p>​    var a = function(){}</p>
+<p>3、自调用函数</p>
+<p>;(function(){</p>
+<p>   console.log(“x”)</p>
+<p>}())</p>
+<p>4、使用Function来创建函数(用的不多)</p>
+<p>var f = new Function(“参数1”,”参数2”,”函数体”);</p>
+<h2 id="1-2函数的原型"><a href="#1-2函数的原型" class="headerlink" title="1.2函数的原型"></a>1.2函数的原型</h2><p>​    1、对象有一个_ proto_，他指向构造函数的原型</p>
+<p>​    2、函数有一个prototype，他表示函数自己的原型信息</p>
+<p>​    3、在函数的原型中有三个部分，分别是公共的属性和方法、constructor、_ proto _</p>
+<pre><code>其实constructor指向当前函数本身，_ proto _指向父亲的原型信息
+</code></pre><p>​    4、其实每个函数都是通过new Function()创建出来的，所以函数本身也是对象</p>
+<pre><code>所以函数._ proto _ == Function.prototype
+</code></pre><p>​    5、Function.prototype._ proto _ ==  Object.prototype</p>
+<p>​    6.在Function.prototype中有call  bind  apply等方法</p>
+<h2 id="1-3-call-bind-apply的使用"><a href="#1-3-call-bind-apply的使用" class="headerlink" title="1.3 call   bind  apply的使用"></a>1.3 call   bind  apply的使用</h2><p><strong>call和apply方法的作用：修改被调用函数中的this指向，直接调用当前函数</strong></p>
+<p> call方法参数:</p>
+<p>​         f1.call(入参谁this就是谁,原函数中的参数1,原函数中的参数2); </p>
+<p>​         注意点：call方法的第一个参数如果是null或者undefined，那么原函数中的this仍然是window</p>
+<p><strong>call和apply方法的区别在于 apply方法第二个参数是一个数组</strong></p>
+<p>f1.call(obj,100,200);</p>
+<p>f1.apply(obj,[1000,2000]);</p>
+<p><strong>bind方法会修改指定函数中的this指向，会返回一个新函数</strong></p>
+<p>var ff = f2.bind(obj);  //参数obj就是要修改的this</p>
+<p>ff(11,22);</p>
+<h2 id="1-4-数组中存放函数"><a href="#1-4-数组中存放函数" class="headerlink" title="1.4 数组中存放函数"></a>1.4 数组中存放函数</h2><pre><code>var arr = [
+
+    function () {
+
+        console.log(&quot;十一假期快乐&quot;);
+
+    },
+
+    function () {
+
+        console.log(&quot;十一假期开心&quot;);
+
+    },
+
+    function () {
+</code></pre><p>​                 console.log(“十一假期健康”);</p>
+<p>​      },</p>
+<pre><code>function () {
+
+    console.log(&quot;十一假期安全&quot;);
+
+},
+
+function () {
+</code></pre><p>​                 console.log(“十一假期如意”);</p>
+<pre><code>    }
+
+];
+</code></pre><p>​         //遍历数组，获取到每一个函数，执行每一个函数</p>
+<pre><code>arr.forEach(function(e){
+
+          e();
+</code></pre><p>​         })</p>
+<h2 id="1-5函数的其他成员"><a href="#1-5函数的其他成员" class="headerlink" title="1.5函数的其他成员"></a>1.5函数的其他成员</h2><p>function fn(x, y, z) {</p>
+<pre><code>console.log(fn.length) // 形参的个数
+</code></pre><p>​            console.log(arguments) // 伪数组实参参数集合</p>
+<pre><code>console.log(fn.caller) // 获取调用当前函数的函数
+</code></pre><p>​            console.log(fn.name)   // 函数的名字</p>
+<p>​         }</p>
+<h2 id="1-6伪数组"><a href="#1-6伪数组" class="headerlink" title="1.6伪数组"></a>1.6伪数组</h2><p>什么是伪数组?</p>
+<p>伪数组具备数组的部分特性，比如具备length，具备下标，但是不可以调用数组的方法</p>
+<p>伪数组问题：<strong>一旦删除伪数组中的元素之后，伪数组length属性不会同步更新</strong></p>
+<p>伪数组的原理:其实是通过对象来模拟数组</p>
+<pre><code>var obj = {
+
+          0:&quot;张三&quot;,
+
+          1:&quot;李四&quot;,
+</code></pre><p>​                   2:”王五”,</p>
+<p>​                   length:3</p>
+<p>​    }</p>
+<p>​    console.log(obj[0]);</p>
+<pre><code>console.log(obj[1]);
+
+console.log(obj[2]);
+
+delete obj[1];
+</code></pre><p>​         console.log(obj);</p>
+<p>我们可以使用call apply等方法让伪数组调用真正数组的方法<br> Array.prototype.forEach.call(arguments,function(e){</p>
+<pre><code>          console.log(e);
+
+})
+</code></pre><p>Array.prototype.push.call(arguments,”xxx”);</p>
+<p>​         console.log(arguments);</p>
+<h2 id="1-7递归"><a href="#1-7递归" class="headerlink" title="1.7递归"></a>1.7递归</h2><p>递归：在函数内部调用函数本身</p>
+<h2 id="1-8函数作为参数"><a href="#1-8函数作为参数" class="headerlink" title="1.8函数作为参数"></a>1.8函数作为参数</h2><p>//回调</p>
+<pre><code>function startTimer(f){
+</code></pre><p>​        setInterval(function(){</p>
+<pre><code>f();
+</code></pre><p>​                   },1000)</p>
+<p>​         }</p>
+<pre><code>startTimer(function(){
+
+          console.log(&quot;aa&quot;);
+</code></pre><p>​         });</p>
+<h2 id="1-9函数作为返回值"><a href="#1-9函数作为返回值" class="headerlink" title="1.9函数作为返回值"></a>1.9函数作为返回值</h2><p>function f1() {</p>
+<pre><code>console.log(&quot;f1函数开始&quot;);
+</code></pre><p>​             return function(){</p>
+<pre><code>             console.log(&quot;函数作为返回值&quot;);
+
+    };
+
+}
+</code></pre><p>var a = f1();</p>
+<p>​         a();  //调用a函数</p>
+<h2 id="1-10闭包"><a href="#1-10闭包" class="headerlink" title="1.10闭包"></a>1.10闭包</h2><p><strong>闭包可以理解为 在函数中嵌套函数</strong>  </p>
+<p><strong>闭包内部函数可以访问外部函数的变量</strong></p>
+<p><strong>闭包缓存数据,延长变量的作用域链</strong></p>
+<p>​    闭包的内存问题：一个函数执行开始时候，会给其中定义的变量划分内存空间保存，以备后面的语句使用，等函数执行完毕返回了这些变量被认为无用的了，对应的空间也就收回了，下次执行此函数的时候，所有变量回到初始状态，重新赋值使用，但是这个函数内部又嵌套一个函数，而这个函数有可能被外部调用，并且这个函数又使用了外部函数某些变量这种内存回收机制就出现问题。如果外部函数返回后，又直接调用了内部函数，那么内部函数就无法读取到它所需要的外部函数中变量的值，所以js解释器在遇到函数定义的时候会自动把函数和他可能使用到的变量一起存起来，也就构建了一个闭包，这些变量将不会被内存回收，只用当内部函数不可能被调用以后，才会销毁这个闭包，而没有任何一个闭包引用的变量才会被下次内存回收启动时回收</p>
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2019/05/06/CSS/">
-        <span class="archive-date">
-            May 2019
-        </span>
-        Untitled
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/05/06/03-JavaScript高级/">
-        <span class="archive-date">
-            May 2019
-        </span>
-        Untitled
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/05/06/Web API/">
-        <span class="archive-date">
-            May 2019
-        </span>
-        Untitled
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 
@@ -204,15 +327,7 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2019/05/06/03-JavaScript高级/">Untitled</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/05/06/Web API/">Untitled</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/05/06/CSS/">Untitled</a>
+                <a class="footer-post" href="/2018/05/11/高阶函数/">高阶函数</a>
             </li>
             
             <li>
