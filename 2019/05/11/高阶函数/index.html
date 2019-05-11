@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="1.1函数的定义1、命名函数,会提升到当前作用域的最前面(在变量声明之前)
+1function test()&amp;#123;&amp;#125;
+2、匿名函数,不会提升
+1var a = function()&amp;#123;&amp;#125;
+3、自调用函数
+123;(function()&amp;#123;   console">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Huamingdan">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="高阶函数">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="1.1函数的定义1、命名函数,会提升到当前作用域的最前面(在变量声明之前)
+1function test()&amp;#123;&amp;#125;
+2、匿名函数,不会提升
+1var a = function()&amp;#123;&amp;#125;
+3、自调用函数
+123;(function()&amp;#123;   console">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="king of the web">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://Huamingdan.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://Huamingdan.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>高阶函数 - king of the web</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>高阶函数</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-05-11
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="1-1函数的定义"><a href="#1-1函数的定义" class="headerlink" title="1.1函数的定义"></a>1.1函数的定义</h2><p>1、命名函数,会提升到当前作用域的最前面(在变量声明之前)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>2、匿名函数,不会提升</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>3、自调用函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;(function()&#123;</span><br><span class="line">   console.log(“x”)</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+<p>4、使用Function来创建函数(用的不多)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var f = new Function(“参数1”,”参数2”,”函数体”);</span><br></pre></td></tr></table></figure>
+<h2 id="1-2函数原型"><a href="#1-2函数原型" class="headerlink" title="1.2函数原型"></a>1.2函数原型</h2><p>​    1.对象有一个<strong> proto</strong>，他指向构造函数的原型</p>
+<p>​    2.函数有一个prototype，他表示函数自己的原型信息</p>
+<p>​    3.在函数的原型中有三个部分，分别是公共的属性和方法、constructor、<strong> proto</strong></p>
+<pre><code>其实constructor指向当前函数本身，__ proto__指向父亲的原型信息
+</code></pre><p>​    4.其实每个函数都是通过new Function()创建出来的，所以函数本身也是对象</p>
+<pre><code>所以函数.__ proto__ == Function.prototype
+</code></pre><p>​    5.Function.prototype.<strong> proto</strong>  ==  Object.prototype</p>
+<p>​    6.在Function.prototype中有call  bind  apply等方法</p>
+<h2 id="1-3-call-bind-apply方法"><a href="#1-3-call-bind-apply方法" class="headerlink" title="1.3 call   bind   apply方法"></a>1.3 call   bind   apply方法</h2><p>​    <strong>call和apply方法的作用：修改被调用函数中的this指向，直接调用当前函数</strong></p>
+<p>​    call方法参数:​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1.call(入参谁this就是谁,原函数中的参数1,原函数中的参数2);</span><br></pre></td></tr></table></figure>
+<p>​             注意点：call方法的第一个参数如果是null或者undefined，那么原函数中的this仍然是window</p>
+<p>​    call和apply方法的区别在于 apply方法第二个参数是一个数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f1.call(obj,100,200);</span><br><span class="line"></span><br><span class="line">f1.apply(obj,[1000,2000]);</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<p>​    bind方法会修改指定函数中的this指向，会返回一个新函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var ff = f2.bind(obj);  //参数obj就是要修改的this</span><br><span class="line"></span><br><span class="line">ff(11,22);</span><br></pre></td></tr></table></figure>
+<h2 id="1-4数组中存放函数"><a href="#1-4数组中存放函数" class="headerlink" title="1.4数组中存放函数"></a>1.4数组中存放函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//函数也可以放入到数组中去</span><br><span class="line">	var arr = [</span><br><span class="line">	    function () &#123;</span><br><span class="line">	        console.log(&quot;十一假期快乐&quot;);</span><br><span class="line">	    &#125;,</span><br><span class="line">	    function () &#123;</span><br><span class="line">	        console.log(&quot;十一假期开心&quot;);</span><br><span class="line">	    &#125;,</span><br><span class="line">	    function () &#123;</span><br><span class="line">	        console.log(&quot;十一假期健康&quot;);</span><br><span class="line">		&#125;,</span><br><span class="line">	    function () &#123;</span><br><span class="line">	        console.log(&quot;十一假期安全&quot;);</span><br><span class="line">	    &#125;,</span><br><span class="line">	    function () &#123;</span><br><span class="line">	        console.log(&quot;十一假期如意&quot;);</span><br><span class="line">	    &#125;</span><br><span class="line">	];</span><br><span class="line">	//遍历数组，获取到每一个函数，执行每一个函数</span><br><span class="line">	arr.forEach(function(e)&#123;</span><br><span class="line">		e();</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="1-5数组中的其他成员"><a href="#1-5数组中的其他成员" class="headerlink" title="1.5数组中的其他成员"></a>1.5数组中的其他成员</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fn(x, y, z) &#123;</span><br><span class="line">	   console.log(fn.length) // 形参的个数</span><br><span class="line">	   console.log(arguments) // 伪数组实参参数集合</span><br><span class="line">	   console.log(fn.caller) // 获取调用当前函数的函数</span><br><span class="line">	   console.log(fn.name)   // 函数的名字</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-6伪数组"><a href="#1-6伪数组" class="headerlink" title="1.6伪数组"></a>1.6伪数组</h2><p>什么是伪数组?</p>
+<p>伪数组具备数组的部分特性，比如具备length，具备下标，但是不可以调用数组的方法</p>
+<p><strong>伪数组问题：一旦删除伪数组中的元素之后，伪数组length属性不会同步更新</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//伪数组的原理:其实是通过对象来模拟数组</span><br><span class="line">	var obj = &#123;</span><br><span class="line">		0:&quot;张三&quot;,</span><br><span class="line">		1:&quot;李四&quot;,</span><br><span class="line">		2:&quot;王五&quot;,</span><br><span class="line">		length:3</span><br><span class="line">&#125;</span><br><span class="line">	console.log(obj[0]);</span><br><span class="line">	console.log(obj[1]);</span><br><span class="line">	console.log(obj[2]);</span><br><span class="line">	delete obj[1];</span><br><span class="line">	console.log(obj);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">我们可以使用call apply等方法让伪数组调用真正数组的方法</span><br><span class="line">Array.prototype.forEach.call(arguments,function(e)&#123;</span><br><span class="line">		console.log(e);</span><br><span class="line">	&#125;)</span><br><span class="line">	Array.prototype.push.call(arguments,&quot;xxx&quot;);</span><br><span class="line">	console.log(arguments);</span><br></pre></td></tr></table></figure>
+<h2 id="1-7递归"><a href="#1-7递归" class="headerlink" title="1.7递归"></a>1.7递归</h2><p>递归：在函数内部调用函数本身</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//求5的阶乘</span><br><span class="line">	function jiechen(n)&#123;</span><br><span class="line">		if (n==0 || n==1) &#123;</span><br><span class="line">			return 1;</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			//return 5*jiechen(4)</span><br><span class="line">			//return 5*4*jiechen(3);</span><br><span class="line">			//return 5*4*3*jiechen(2);</span><br><span class="line">			//return 5*4*3*2*jiechen(1);</span><br><span class="line">			//return 5*4*3*2*1;</span><br><span class="line">			return n*jiechen(n-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	console.log(jiechen(5));</span><br></pre></td></tr></table></figure>
+<h2 id="1-8函数作为参数"><a href="#1-8函数作为参数" class="headerlink" title="1.8函数作为参数"></a>1.8函数作为参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//回调</span><br><span class="line">	function startTimer(f)&#123;</span><br><span class="line">        setInterval(function()&#123;</span><br><span class="line">                    f();</span><br><span class="line">                &#125;,1000)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">	startTimer(function()&#123;</span><br><span class="line">		console.log(&quot;aa&quot;);</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="1-9函数作为返回值"><a href="#1-9函数作为返回值" class="headerlink" title="1.9函数作为返回值"></a>1.9函数作为返回值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">	    console.log(&quot;f1函数开始&quot;);</span><br><span class="line">	    return function()&#123;</span><br><span class="line">	    	console.log(&quot;函数作为返回值&quot;);</span><br><span class="line">	    &#125;;</span><br><span class="line">	&#125;</span><br><span class="line">var a = f1();</span><br><span class="line">	a();  //调用a函数</span><br></pre></td></tr></table></figure>
+<h2 id="1-10闭包"><a href="#1-10闭包" class="headerlink" title="1.10闭包"></a>1.10闭包</h2><p><strong>1、闭包可以理解为 在函数中嵌套函数</strong>  </p>
+<p><strong>2、闭包内部函数可以访问外部函数的变量</strong></p>
+<p><strong>3、闭包缓存数据,延长变量的作用域链</strong></p>
+<p>​    闭包的内存问题：一个函数执行开始时候，会给其中定义的变量划分内存空间保存，以备后面的语句使用，等函数执行完毕返回了这些变量被认为无用的了，对应的空间也就收回了，下次执行此函数的时候，所有变量回到初始状态，重新赋值使用，但是这个函数内部又嵌套一个函数，而这个函数有可能被外部调用，并且这个函数又使用了外部函数某些变量这种内存回收机制就出现问题。如果外部函数返回后，又直接调用了内部函数，那么内部函数就无法读取到它所需要的外部函数中变量的值，所以js解释器在遇到函数定义的时候会自动把函数和他可能使用到的变量一起存起来，也就构建了一个闭包，这些变量将不会被内存回收，只用当内部函数不可能被调用以后，才会销毁这个闭包，而没有任何一个闭包引用的变量才会被下次内存回收启动时回收。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 Huamingdan<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
